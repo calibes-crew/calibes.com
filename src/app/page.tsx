@@ -1,10 +1,80 @@
-"use client";
+'use client';
+
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import styles from "@/styles/home.module.scss";
+
+const heroImages = [
+  "/Calibes_open1.png",
+  "/Calibes_open2.png",
+];
 
 export default function Page() {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % heroImages.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <main>
-      <h1>Calibes</h1>
-      <p>Calibes Crew web site</p>
-    </main>
+    <div className={styles.main}>
+      <nav className={styles.nav}>
+        <Image
+          src="/Calibes_white.png"
+          alt="Calibes"
+          width={150}
+          height={40}
+          className={styles.logo}
+        />
+      </nav>
+
+      <section className={styles.hero}>
+        <div className={styles.heroImageWrapper}>
+          {heroImages.map((src, index) => (
+            <Image
+              key={index}
+              src={src}
+              alt={`Hero ${index + 1}`}
+              fill
+              priority={index === 0}
+              sizes="(max-width: 1400px) 100vw, 1400px"
+              className={`${styles.heroImage} ${index === currentImage ? styles.active : ""}`}
+            />
+          ))}
+
+          <div className={styles.heroOverlay}></div>
+
+          <div className={styles.dotsContainer}>
+            {heroImages.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentImage(index)}
+                className={`${styles.dot} ${index === currentImage ? styles.dotActive : ""}`}
+                aria-label={`${index + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.features}>
+        <div className={styles.feature}>
+          <h3>STAROUND</h3>
+          <p>Game</p>
+        </div>
+        <div className={styles.feature}>
+          <h3>Command Pack</h3>
+          <p>Pack</p>
+        </div>
+      </section>
+
+      <footer className={styles.footer}>
+        <p>© 2025 Calibes Crew</p>
+      </footer>
+    </div>
   );
 }

@@ -1,0 +1,168 @@
+.main {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+.nav {
+    padding: 2rem 4rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    filter: brightness(0) invert(1);
+}
+
+.hero {
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 2rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+.heroImageWrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    height: 500px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.heroImage {
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.heroImage.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.heroOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+    z-index: 20;
+    pointer-events: none;
+}
+
+.dotsContainer {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+    z-index: 30;
+}
+
+.dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.8);
+    }
+}
+
+.dotActive {
+    width: 2rem;
+    background: #ffffff;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.feature {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2.5rem 2rem;
+    border-radius: 0;
+    text-align: center;
+    transition: background 0.3s ease;
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin: 0 0 0.75rem 0;
+        color: #ffffff;
+    }
+
+    p {
+        font-size: 1rem;
+        color: #a0a0a0;
+        margin: 0;
+        font-weight: 300;
+    }
+}
+
+.footer {
+    padding: 2rem;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.3);
+
+    p {
+        margin: 0;
+        font-size: 0.9rem;
+        color: #808080;
+        font-weight: 300;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav {
+        padding: 1.5rem 2rem;
+    }
+
+    .hero {
+        padding: 2rem 1rem;
+    }
+
+    .heroImageWrapper {
+        height: 300px;
+    }
+
+    .features {
+        padding: 2rem 1rem;
+        gap: 1.5rem;
+    }
+
+    .feature {
+        padding: 2rem 1.5rem;
+    }
+}

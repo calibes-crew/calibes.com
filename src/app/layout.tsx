@@ -1,3 +1,5 @@
+import "./globals.scss"
+
 export const metadata = {
   title: "Calibes",
   description: "Calibes Crew web site",
