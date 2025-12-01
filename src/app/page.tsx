@@ -24,10 +24,17 @@ export default function Page() {
     <div className={styles.main}>
       <nav className={styles.nav}>
         <Image
+          src="/Calibes_white_Icon.svg"
+          alt="Calibes Icon"
+          width={30}
+          height={30}
+          className={styles.logo_icon}
+        />
+        <Image
           src="/Calibes_white.png"
           alt="Calibes"
-          width={150}
-          height={40}
+          width={105}
+          height={30}
           className={styles.logo}
         />
       </nav>
