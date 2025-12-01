@@ -68,17 +68,6 @@ export default function Page() {
         </div>
       </section>
 
-      <section className={styles.features}>
-        <div className={styles.feature}>
-          <h3>STAROUND</h3>
-          <p>Game</p>
-        </div>
-        <div className={styles.feature}>
-          <h3>Command Pack</h3>
-          <p>Pack</p>
-        </div>
-      </section>
-
       <footer className={styles.footer}>
         <p>© 2025 Calibes Crew</p>
       </footer>

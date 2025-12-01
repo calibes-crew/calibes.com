@@ -97,43 +97,6 @@
     background: #ffffff;
 }
 
-.features {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 4rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
-}
-
-.feature {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 2.5rem 2rem;
-    border-radius: 0;
-    text-align: center;
-    transition: background 0.3s ease;
-
-    &:hover {
-        background: rgba(255, 255, 255, 0.1);
-    }
-
-    h3 {
-        font-size: 1.5rem;
-        font-weight: 600;
-        margin: 0 0 0.75rem 0;
-        color: #ffffff;
-    }
-
-    p {
-        font-size: 1rem;
-        color: #a0a0a0;
-        margin: 0;
-        font-weight: 300;
-    }
-}
-
 .footer {
     padding: 2rem;
     text-align: center;
