@@ -5,8 +5,9 @@ import Image from "next/image";
 import styles from "@/styles/home.module.scss";
 
 const heroImages = [
-  "/Calibes_open1.png",
-  "/Calibes_open2.png",
+  "/Calibes_openGraph.png",
+  "/STAROUND-1.png",
+  "/Thumbnail.png",
 ];
 
 export default function Page() {
