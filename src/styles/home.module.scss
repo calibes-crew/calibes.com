@@ -51,7 +51,7 @@
 .heroImage {
     object-fit: cover;
     opacity: 0;
-    transition: opacity 1s ease-in-out;
+    transition: opacity 1.2s ease-in-out;
 }
 
 .heroImage.active {
@@ -84,7 +84,7 @@
     background: rgba(255, 255, 255, 0.5);
     border: none;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.8s ease;
     padding: 0;
 
     &:hover {
@@ -93,7 +93,7 @@
 }
 
 .dotActive {
-    width: 2rem;
+    width: 3rem;
     background: #ffffff;
 }
 
