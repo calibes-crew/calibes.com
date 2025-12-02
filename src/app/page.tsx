@@ -5,20 +5,21 @@ import Image from "next/image";
 import styles from "@/styles/home.module.scss";
 
 const heroImages = [
-  "/Calibes_open1.png",
-  "/Calibes_open2.png",
+  "/Calibes_openGraph.png",
+  "/STAROUND-1.png",
+  "/Thumbnail.png",
 ];
 
 export default function Page() {
   const [currentImage, setCurrentImage] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    const timer = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % heroImages.length);
-    }, 3000);
+    }, 4000);
 
-    return () => clearInterval(interval);
-  }, []);
+    return () => clearInterval(timer);
+  }, [currentImage]);
 
   return (
     <div className={styles.main}>
